@@ -37,12 +37,11 @@ export class LoginComponent implements OnInit {
       if(data.body.success){
         this.authservice.storeUserData(data.body.token,data.body.user);
         console.log("user logged in");
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['/userlog/dashboard']);
       }else{
         console.log("wrong credentional");
-        this.router.navigate(['login']);
+        this.router.navigate(['/userlog/login']);
       }
     })
   }
-
 }

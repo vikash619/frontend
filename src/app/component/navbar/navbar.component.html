@@ -8,22 +8,21 @@
       <div class="collapse navbar-collapse" id="navbarColor03">
         <ul class="navbar-nav me-auto">
           <li *ngIf="authservice.loggedin()" class="nav-item">
-            <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+            <a class="nav-link" routerLink="/userlog/dashboard">Dashboard</a>
           </li>
           <li *ngIf="authservice.loggedin()" class="nav-item">
-            <a class="nav-link" routerLink="/resume">Resume</a>
+            <a class="nav-link" [routerLink]="['/userresume/resume']">Resume</a>
           </li>
           <li *ngIf="!authservice.loggedin()" class="nav-item">
-            <a class="nav-link" [routerLink]="['/login']">Login</a>
+            <a class="nav-link" [routerLink]="['/userlog/login']">Login</a>
           </li>
           <li *ngIf="authservice.loggedin()" class="nav-item">
             <a class="nav-link" (click)="onLoggedout()">Logout</a>
           </li>
           <li *ngIf="!authservice.loggedin()" class="nav-item">
-            <a class="nav-link" [routerLink]="['/register']">Register</a>
+            <a class="nav-link" [routerLink]="['/userlog/register']">Register</a>
           </li>
         </ul>
-        
       </div>
     </div>
   </nav>

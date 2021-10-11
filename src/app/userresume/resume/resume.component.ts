@@ -121,7 +121,7 @@ export class ResumeComponent implements OnInit {
       console.log(data.body);
       if(data.body.success){
         console.log("resume saved successfully");
-        this.router.navigate(['/resumetemplate']);
+        this.router.navigate(['/userresume/resumetemplate']);
       }else{
         console.log("something went wrong");
       }
