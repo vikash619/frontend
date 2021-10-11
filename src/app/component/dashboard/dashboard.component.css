@@ -1,0 +1,24 @@
+.dash-div{
+    height: 92.1vh;
+    width: 100%;
+    background-image: url('../../../assets/images/Register.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.dash-content{
+    display: inline-block;
+    width: 30%;
+    margin-top: 5%;
+    margin-left: 33%;
+}
+
+.page-header{
+    color: black;
+    padding-left: 35%;
+}
+
+label{
+    font-weight: 900;
+}

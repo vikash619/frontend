@@ -1,0 +1,23 @@
+.register-div{
+    height: 92.1vh;
+    width: 100%;
+    background-image: url('../../../assets/images/Register.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.register-content{
+    display: inline-block;
+    width: 30%;
+    margin-top: 5%;
+    margin-left: 33%;
+}
+
+label{
+    font-weight: 900;
+}
+
+.page-header{
+    color: white;
+    padding-left: 35%;
+}

@@ -1,0 +1,19 @@
+.container-fluid{
+    height: 92.1vh;
+    background-image: url('../../../assets/images/Login.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.div-center{
+    margin: 25vh auto;
+}
+
+.page-header{
+    text-transform: uppercase;
+}
+
+label{
+    text-transform: capitalize;
+}
