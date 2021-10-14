@@ -1,0 +1,22 @@
+<div class="verification_container">
+    <div class="verification_div">
+        <h2>OTP Verification</h2>
+        <form [formGroup]="numberVerificationForm">
+            <div class="mt-2 form-group">
+                <h5 class="otp_heading">Enter your Mob : </h5>
+                <input type="tel" class="form-control" name="phone_number" formControlName="phone_number"  placeholder="Phone Number"
+                [class.is-invalid]="numberVerificationForm.get('phone_number').invalid && numberVerificationForm.get('phone_number').touched">
+                <input type="button" value="Verify" class="btn btn-primary mt-3" (click)="generateotp()">
+            </div>
+        </form>
+
+        <form [formGroup]="otpVerificationForm">
+            <div class="mt-2 form-group">
+                <h5 class="otp_heading">Enter your OTP : </h5>
+                <input type="tel" class="form-control" name="otp_number" formControlName="otp_number" placeholder="OTP"
+                [class.is-invalid]="otpVerificationForm.get('otp_number').invalid && otpVerificationForm.get('otp_number').touched" >
+                <input type="button" value="Send" class="btn btn-primary mt-3" (click)="verifyotp()">
+            </div>
+        </form>
+    </div>
+</div>

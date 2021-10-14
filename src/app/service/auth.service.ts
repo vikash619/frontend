@@ -37,6 +37,20 @@ export class AuthService {
     return this.http.post<any>(`users/profile/update/${id}`, profileUpdateFormValue,{headers:headers, observe:'response', withCredentials:true});
   }
 
+  generateOTP(numberVerificationFormValue){
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post<any>(`users/generateotp`, numberVerificationFormValue,{headers:headers, observe:'response', withCredentials:true});
+
+  }
+
+  verifyOTP(otpVerificationFormValue){
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post<any>(`users/verifyotp`, otpVerificationFormValue,{headers:headers, observe:'response', withCredentials:true});
+  }
+
+
   resumeFormSave(resumeFormValue){
     let header = new HttpHeaders();
     header.append("Content-Type", "application/json");

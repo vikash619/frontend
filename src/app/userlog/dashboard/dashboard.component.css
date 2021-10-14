@@ -22,3 +22,8 @@
 label{
     font-weight: 900;
 }
+
+.verification{
+    text-decoration: none;
+    color: red;
+}

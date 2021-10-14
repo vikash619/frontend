@@ -53,7 +53,8 @@ export class RegisterComponent implements OnInit {
     userName : ['', [Validators.required]],
     email : ['', [Validators.required]],
     password : ['', [Validators.required, Validators.minLength(4)]],
-    confirmpassword : ['', [Validators.required, Validators.minLength(4)]]
+    confirmpassword : ['', [Validators.required, Validators.minLength(4)]],
+    verified: [false]
   })
 
 
@@ -72,10 +73,10 @@ export class RegisterComponent implements OnInit {
       console.log(data.body);
       if(data.body.success){
         console.log('user added successfully');
-        this.router.navigate(['/login'])
+        this.router.navigate(['/userlog/login'])
       }else{
         console.log('something went wrong');
-        this.router.navigate(['/register']);
+        this.router.navigate(['/userlog/register']);
       }
     })
   }

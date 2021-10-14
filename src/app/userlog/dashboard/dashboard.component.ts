@@ -28,7 +28,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.authservice.getProfile().subscribe((data: any) => {
       this.userValue = data.user;
-      
       this.profileUpdateForm.get("fullName").setValue(this.userValue.fullName);
       this.profileUpdateForm.get("userName").setValue(this.userValue.userName);
       this.profileUpdateForm.get("email").setValue(this.userValue.email);
@@ -41,7 +40,6 @@ export class DashboardComponent implements OnInit {
 
   onprofileupdateform(){
     this.authservice.updateUser( this.userValue._id , this.profileUpdateForm.value).subscribe((data:any)=>{
-      console.log(data);
       if(data.body.success){
         console.log("profile updated successfully");
       }else{
