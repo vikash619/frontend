@@ -3,9 +3,10 @@
 }
 
 .skillinput{
-    width: 45%;
+    width: 100%;
 }
 
 .skillrating{
     display: inline-block;
+    margin-left: 5%;
 }

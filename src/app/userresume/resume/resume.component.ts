@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
 import { FormBuilder,FormArray, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.css']
+  styleUrls: ['./resume.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ResumeComponent implements OnInit {
 
@@ -23,6 +24,8 @@ export class ResumeComponent implements OnInit {
     academicQli: this.fb.array([this.acad()]),
     workExp: this.fb.array([this.work()]),
     skills : this.fb.array([this.skil()]),
+    languages : this.fb.array([this.lang()]),
+    interests : this.fb.array([this.intrst()]),
     objective : '',
   });
 
@@ -41,6 +44,14 @@ export class ResumeComponent implements OnInit {
 
   get skills(): FormArray{
     return <FormArray>this.resumeForm.get('skills');
+  }
+
+  get languages(): FormArray{
+    return <FormArray>this.resumeForm.get('languages');
+  }
+
+  get interests(): FormArray{
+    return <FormArray>this.resumeForm.get('interests');
   }
 
   token!: any;
@@ -68,6 +79,18 @@ export class ResumeComponent implements OnInit {
     });
   }
 
+  lang(): FormGroup{
+    return this.fb.group({
+      languages : ''
+    });
+  }
+
+  intrst(): FormGroup{
+    return this.fb.group({
+      interests : ''
+    });
+  }
+  
   ngOnInit(): void {
 
     this.authservice.getResumeData().subscribe((data:any)=>{
@@ -95,6 +118,8 @@ export class ResumeComponent implements OnInit {
         linkedin : data.resumeData.linkedin,
         stackoverflow : data.resumeData.stackoverflow,
         skills : data.resumeData.skills,
+        languages : data.resumeData.languages,
+        interests : data.resumeData.interests,
         objective: data.resumeData.objective,
         academicQli : data.resumeData.academicQli,
         workExp : data.resumeData.workExp,
@@ -115,6 +140,14 @@ export class ResumeComponent implements OnInit {
     this.skills.push(this.skil());
   }
 
+  addnewlang(){
+    this.languages.push(this.lang());
+  }
+
+  addnewintrst(){
+    this.interests.push(this.intrst());
+  }
+  
   onResumeSubmit(){
     console.log(this.resumeForm.value);
     this.authservice.resumeFormSave(this.resumeForm.value).subscribe((data:any)=>{

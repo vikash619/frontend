@@ -1,4 +1,4 @@
-.container-fluid{
+/* .container-fluid{
     height: 92.1vh;
     background-image: url('../../../assets/images/Login.jpg');
     background-repeat: no-repeat;
@@ -16,4 +16,76 @@
 
 label{
     text-transform: capitalize;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    font: 62.5%;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
+                url('../../../assets/images/login1.jpg') no-repeat;
+}
+
+.outer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container{
+    margin-top: 2rem;
+    /* border: 2px solid white; */
+    background-color: white;
+    margin-bottom: 2rem;
+}
+
+.img-div{
+    height: 20%;
+    width: 20%;
+}
+
+h1{
+    margin: 1rem 2rem;
+    color: green;
+}
+
+.credential{
+    display: block;
+    padding: .5rem .5rem;
+    margin: 2rem 2rem;
+    width: 90%;
+}
+
+.btn-credential{
+    display: block;
+    padding: .5rem .5rem;
+    margin: 1rem 2rem;
+    width: 90%;
+    /* margin-bottom: 2rem; */
+}
+
+.label-and-link{
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkbox-label{
+    margin-left: 2rem;
+    /* margin: 0rem 2rem; */
+    color: green;
+    Font-weight: 700;
+}
+
+.check-box{
+    height: 1rem;
+    width: 2rem;
+}
+
+.forgot-link{
+    margin: 0rem 2rem;
+    text-decoration: none;
 }

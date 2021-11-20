@@ -4,8 +4,8 @@
     <form [formGroup]="resumeForm" (ngSubmit)="onResumeSubmit()">
         <div class="row">
             <div class="col-md-6">
+                
                 <!-- first column -->
-
                 <div class="form-group mt-2">
                     <label for="fullName">Full Name </label>
                     <input type="text" class="form-control" placeholder="Enter your fullname" id="fullName"
@@ -42,13 +42,11 @@
                         formControlName="website">
                 </div>
 
-
                 <div class="form-group mt-2">
                     <label for="github">Github</label>
                     <input type="text" class="form-control" placeholder="Enter your Github link" name="github"
                         formControlName="github">
                 </div>
-
 
                 <div class="form-group mt-2">
                     <label for="linkedin">Linked In</label>
@@ -90,7 +88,41 @@
                             Add
                         </button>
                     </div>
+                </div>
 
+                <div class="form-group mt-2">
+                    <label for="languages">Languages</label>
+
+                    <div formArrayName="languages" *ngFor="let lang of languages.controls; let i=index">
+                        <div [formGroupName]="i" class="skillrating">
+                            <input type="text" class="form-control mt-2 skillinput" placeholder="Enter Your languages"
+                                formControlName="languages">
+
+                        </div>
+                    </div>
+                    
+                    <div class="mt-2">
+                        <button type="button" class="btn btn-primary skilladd" (click)="addnewlang()">
+                            Add
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="interests">Interests</label>
+
+                    <div formArrayName="interests" *ngFor="let intrst of interests.controls; let i=index">
+                        <div [formGroupName]="i" class="skillrating">
+                            <input type="text" class="form-control mt-2 skillinput" placeholder="Enter Your interests"
+                                formControlName="interests">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-2">
+                        <button type="button" class="btn btn-primary skilladd" (click)="addnewintrst()">
+                            Add
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -99,8 +131,7 @@
 
                 <div class="form-group mt-2">
                     <label for="academicQli" style="font-weight:700">Academic Qualifications</label>
-                    <!-- <textarea name="academicQli" id="" cols="" rows="5" class="form-control" formControlName="academicQli"></textarea> -->
-
+                
                     <div formArrayName="academicQli" id="academicQliDiv"
                         *ngFor="let acad of academicQli.controls; let i=index">
                         <div class="text-center" *ngIf="i==0">
@@ -211,6 +242,5 @@
                 <button type="submit" class="btn btn-primary">Generate Resume</button>
             </div>
         </div>
-
     </form>
 </div>

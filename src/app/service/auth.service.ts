@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
+import { CacheStorage } from 'html2canvas/dist/types/core/cache-storage';
 
 
 @Injectable({
@@ -8,8 +10,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AuthService {
   authToken : any;
   user : any;
+  allCookieData : any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private cookies:CookieService) { }
 
   registerUser(registrationForm){
     let headers = new HttpHeaders();
@@ -41,7 +44,6 @@ export class AuthService {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.post<any>(`users/generateotp`, numberVerificationFormValue,{headers:headers, observe:'response', withCredentials:true});
-
   }
 
   verifyOTP(otpVerificationFormValue){
@@ -98,6 +100,8 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
-    
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('users/logout', {headers:headers,  observe:'response', withCredentials:true})
   }
 }

@@ -60,11 +60,12 @@ export class RegisterComponent implements OnInit {
 
   loadexampleApiData(){
     this.registrationForm.setValue({        //in setValue({}) : have to supply all value, if want supply few value than use : patchValue({})
-      fullName : "vikash",
-      userName : "vikash619",
-      email : "vikaskmishra619@gmail.com",
+      fullName : "demo",
+      userName : "demo1",
+      email : "demo@gmail.com",
       password : "1111",
-      confirmpassword : "1111"
+      confirmpassword : "1111",
+      verified: [false]
     })
   }
 

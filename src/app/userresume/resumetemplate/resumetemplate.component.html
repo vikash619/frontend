@@ -57,21 +57,12 @@
 
                 <div class="contactInfo language">
                     <h3 class="title">Language</h3>
-                    <ul>
-                        <li>
-                            <span class="text">English</span>
+                    <ul >
+                        <li *ngFor="let lang of backResumeData.languages">
+                            <span class="text">{{lang.languages}}</span>
                             <span class="percent">
                                 <div style="width: 80%;"></div>
                             </span>
-
-                        </li>
-
-                        <li>
-                            <span class="text">Hindi</span>
-                            <span class="percent">
-                                <div style="width: 90%;"></div>
-                            </span>
-
                         </li>
                     </ul>
                 </div>
@@ -107,56 +98,16 @@
                             <div style="width: 70%"></div>
                         </div>
                     </div>
-
-                    <div class="box">
-                        <h4>CSS3</h4>
-                        <div class="percent">
-                            <div style="width: 60%"></div>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <h4>JavaScript</h4>
-                        <div class="percent">
-                            <div style="width: 60%"></div>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <h4>MongoDB</h4>
-                        <div class="percent">
-                            <div style="width: 60%"></div>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <h4>Angular</h4>
-                        <div class="percent">
-                            <div style="width: 50%"></div>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <h4>NodeJS</h4>
-                        <div class="percent">
-                            <div style="width: 60%"></div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="about interest">
                     <h2 class="title2">Interest</h2>
                     <ul>
-                        <li>Volleybal</li>
-                        <li>Cricket</li>
-                        <li>Skipping</li>
-                        <li>Running</li>
+                        <li *ngFor="let intrst of backResumeData.interests">{{intrst.interests}}</li>
                     </ul>
                 </div>
             </div>
         </div>
-
-
     </div>
 
     <div class="text-center">

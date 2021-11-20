@@ -16,7 +16,9 @@ export class NavbarComponent implements OnInit {
   }
 
   onLoggedout(){
-    this.authservice.loggedout();
+    this.authservice.loggedout().subscribe((data:any)=>{
+      console.log("cleared successfully cookie");
+    })
     this.router.navigate(['/userlog/login']);
   }
 }
