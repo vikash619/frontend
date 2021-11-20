@@ -31,8 +31,8 @@ export class DashboardComponent implements OnInit {
       this.profileUpdateForm.get("fullName").setValue(this.userValue.fullName);
       this.profileUpdateForm.get("userName").setValue(this.userValue.userName);
       this.profileUpdateForm.get("email").setValue(this.userValue.email);
-      this.profileUpdateForm.get("password").setValue(this.userValue.password);
-      this.profileUpdateForm.get("confirmpassword").setValue(this.userValue.confirmpassword);
+      // this.profileUpdateForm.get("password").setValue(this.userValue.password);
+      // this.profileUpdateForm.get("confirmpassword").setValue(this.userValue.confirmpassword);
     }, (err) => {
       console.log(err)
     })

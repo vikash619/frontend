@@ -107,7 +107,6 @@ export class ResumeComponent implements OnInit {
       }
 
       this.resumeForm.patchValue({
-
         fullName: data.resumeData.fullName,
         designation : data.resumeData.designation,
         contact : data.resumeData.contact,
