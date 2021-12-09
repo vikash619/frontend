@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { CacheStorage } from 'html2canvas/dist/types/core/cache-storage';
-
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +11,20 @@ export class AuthService {
   allCookieData : any;
 
   constructor(private http:HttpClient, private cookies:CookieService) { }
+
+  // Auth and validation functions 
+
+  
+
+
+
+
+
+
+
+
+
+  // User functions
 
   registerUser(registrationForm){
     let headers = new HttpHeaders();

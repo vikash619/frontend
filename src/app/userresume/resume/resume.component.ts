@@ -96,32 +96,32 @@ export class ResumeComponent implements OnInit {
     this.authservice.getResumeData().subscribe((data:any)=>{
 
       console.log(data)
-      console.log( data.resumeData.academicQli.length );
+      console.log( data.resumeData?.academicQli.length );
 
-      for(let i = 0; i < data.resumeData.academicQli.length-1; i++){
+      for(let i = 0; i < data.resumeData?.academicQli.length-1; i++){
         this.addnewacademicQli();
       }
       
-      for (let i = 0; i < data.resumeData.workExp.length-1; i++){
+      for (let i = 0; i < data.resumeData?.workExp.length-1; i++){
         this.addnewworkExp();
       }
 
       this.resumeForm.patchValue({
-        fullName: data.resumeData.fullName,
-        designation : data.resumeData.designation,
-        contact : data.resumeData.contact,
-        email : data.resumeData.email,
-        address : data.resumeData.address,
-        website : data.resumeData.website,
-        github : data.resumeData.github,
-        linkedin : data.resumeData.linkedin,
-        stackoverflow : data.resumeData.stackoverflow,
-        skills : data.resumeData.skills,
-        languages : data.resumeData.languages,
-        interests : data.resumeData.interests,
-        objective: data.resumeData.objective,
-        academicQli : data.resumeData.academicQli,
-        workExp : data.resumeData.workExp,
+        fullName: data.resumeData?.fullName,
+        designation : data.resumeData?.designation,
+        contact : data.resumeData?.contact,
+        email : data.resumeData?.email,
+        address : data.resumeData?.address,
+        website : data.resumeData?.website,
+        github : data.resumeData?.github,
+        linkedin : data.resumeData?.linkedin,
+        stackoverflow : data.resumeData?.stackoverflow,
+        skills : data.resumeData?.skills,
+        languages : data.resumeData?.languages,
+        interests : data.resumeData?.interests,
+        objective: data.resumeData?.objective,
+        academicQli : data.resumeData?.academicQli,
+        workExp : data.resumeData?.workExp,
       })
     })
 

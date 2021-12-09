@@ -6,7 +6,7 @@
                     <div class="imgBx">
                         <img src="../../../assets/images/piz2.jpg" alt="error">
                     </div>
-                    <h2>{{backResumeData.fullName}}<br><span>{{backResumeData.designation}}</span></h2>
+                    <h2>{{backResumeData?.fullName}}<br><span>{{backResumeData?.designation}}</span></h2>
                 </div>
 
                 <div class="contactInfo">
@@ -14,32 +14,32 @@
                     <ul>
                         <li>
                             <!-- <span class="icon"><i class="fas fa-phone-volume"></i></span> -->
-                            <span class="text">{{backResumeData.contact}}</span>
+                            <span class="text">{{backResumeData?.contact}}</span>
                         </li>
 
                         <li>
                             <!-- <span class="icon"><i class="fab fa-mailchimp"></i></span> -->
-                            <span class="text">{{backResumeData.email}}</span>
+                            <span class="text">{{backResumeData?.email}}</span>
                         </li>
 
                         <li>
                             <!-- <span class="icon"><i class="fas fa-globe"></i></span> -->
-                            <span class="text">{{backResumeData.website}}</span>
+                            <span class="text">{{backResumeData?.website}}</span>
                         </li>
 
                         <li>
                             <!-- <span class="icon"><i class="fab fa-linkedin"></i></span> -->
-                            <span class="text">{{backResumeData.github}}</span>
+                            <span class="text">{{backResumeData?.github}}</span>
                         </li>
 
                         <li>
                             <!-- <span class="icon"><i class="fab fa-linkedin"></i></span> -->
-                            <span class="text">{{backResumeData.linkedin}}</span>
+                            <span class="text">{{backResumeData?.linkedin}}</span>
                         </li>
 
                         <li>
                             <!-- <span class="icon"><i class="fab fa-stack-overflow"></i></span> -->
-                            <span class="text">{{backResumeData.stackoverflow}}</span>
+                            <span class="text">{{backResumeData?.stackoverflow}}</span>
                         </li>
                     </ul>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="contactInfo education">
                     <h3 class="title">Education</h3>
                     <ul id="education_ul">
-                        <li *ngFor="let edu of backResumeData.academicQli">
+                        <li *ngFor="let edu of backResumeData?.academicQli">
                             <h5> {{edu.year}} </h5>
                             <h4> {{edu.course}} </h4>
                             <h4> {{edu.institution}} </h4>
@@ -58,7 +58,7 @@
                 <div class="contactInfo language">
                     <h3 class="title">Language</h3>
                     <ul >
-                        <li *ngFor="let lang of backResumeData.languages">
+                        <li *ngFor="let lang of backResumeData?.languages">
                             <span class="text">{{lang.languages}}</span>
                             <span class="percent">
                                 <div style="width: 80%;"></div>
@@ -72,13 +72,13 @@
                 <div class="about">
                     <h2 class="title2">Objective</h2>
                     <p>
-                       {{backResumeData.objective}}
+                       {{backResumeData?.objective}}
                     </p>
                 </div>
 
                 <div class="about">
                     <h2 class="title2">Expericences</h2>
-                    <div class="box" *ngFor="let exp of backResumeData.workExp">
+                    <div class="box" *ngFor="let exp of backResumeData?.workExp">
                         <div class="year_company">
                             <h5 class="my-2"> {{exp.year}} </h5>
                             <h5> {{exp.company}}</h5>
@@ -92,7 +92,7 @@
 
                 <div class="about skills">
                     <h2 class="title2">Professional Skills</h2>
-                    <div class="box" *ngFor="let skl of backResumeData.skills">
+                    <div class="box" *ngFor="let skl of backResumeData?.skills">
                         <h4> {{skl.skills}} </h4>
                         <div class="percent">
                             <div style="width: 70%"></div>
@@ -103,7 +103,7 @@
                 <div class="about interest">
                     <h2 class="title2">Interest</h2>
                     <ul>
-                        <li *ngFor="let intrst of backResumeData.interests">{{intrst.interests}}</li>
+                        <li *ngFor="let intrst of backResumeData?.interests">{{intrst.interests}}</li>
                     </ul>
                 </div>
             </div>
